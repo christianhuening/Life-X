@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WolfSheep.Run", "Samples\Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WolfSheep.Model", "Samples\WolfSheep.Model\WolfSheep.Model.csproj", "{0957308F-947F-4298-9E13-812995BD4C78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Host", "LifeX.Host\LifeX.Host.csproj", "{285221B6-9590-44CF-A7C4-1146F82BE22D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{0957308F-947F-4298-9E13-812995BD4C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0957308F-947F-4298-9E13-812995BD4C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0957308F-947F-4298-9E13-812995BD4C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{285221B6-9590-44CF-A7C4-1146F82BE22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{285221B6-9590-44CF-A7C4-1146F82BE22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{285221B6-9590-44CF-A7C4-1146F82BE22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{285221B6-9590-44CF-A7C4-1146F82BE22D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{783D14D9-C3F5-47A6-A501-E258701823C1} = {18F2159D-9740-4F7A-B0E8-37057E5C79ED}

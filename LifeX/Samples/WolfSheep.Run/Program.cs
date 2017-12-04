@@ -1,4 +1,9 @@
 ﻿using System;
+using System.IO;
+using LifeX.API;
+using LifeX.Runtime;
+using LifeX.Runtime.Data;
+using WolfSheep.Model;
 
 namespace WolfSheep.Run
 {
@@ -32,16 +37,16 @@ namespace WolfSheep.Run
 
             // create simulation runtime
             var simulationConfig = SimulationConfig.FromDefault();
-            // optional: define PubSub mechanism
-            simulationConfig.PubSub = new VoronoiPubSub(/* ... */);
+            // optional: define values other than default, e.g. PubSub mechanism
+            simulationConfig.PubSubMechanism = PubSubMechanism.VoronoiOverlay;
             var simulation = new Simulation(simulationConfig);
 
             // distribute height data across actors
             simulation.DistributeLayerData<IGrass>(grassHeightGrid);
 
             //
-            Vec2[] wolfPositions = Distribution.RandomPositions(wolfCount);
-            Vec2[] sheepPositions = Distribution.RandomPositions(sheepCount);
+            IVec[] wolfPositions = Distribution.RandomPositions2D(wolfCount);
+            IVec[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
             //
             simulation.DistributeAgents<WolfAgent>(wolfPositions);
