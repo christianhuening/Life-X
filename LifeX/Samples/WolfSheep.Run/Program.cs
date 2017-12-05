@@ -23,9 +23,9 @@ namespace WolfSheep.Run
             }
             
             // get simulation configuration parameters
-            var heightMapFilename = Parameters.Required<string>("HEIGHT_MAP_FILE");
-            var wolfCount = Parameters.Optional<long>("WOLF_COUNT", 10_000_000);
-            var sheepCount = Parameters.Optional<long>("SHEEP_COUNT", 100_000_000);
+            var heightMapFilename = Parameter.Required<string>("HEIGHT_MAP_FILE");
+            var wolfCount = Parameter.Optional<long>("WOLF_COUNT", 10_000_000);
+            var sheepCount = Parameter.Optional<long>("SHEEP_COUNT", 100_000_000);
 
             // load height data
             DataGrid<double> grassHeightGrid;
@@ -54,6 +54,8 @@ namespace WolfSheep.Run
 
             // setup global rules and effects
             // simulation.AddRule(/* ... */)
+            
+            simulation.Start();
         }
     }
 }

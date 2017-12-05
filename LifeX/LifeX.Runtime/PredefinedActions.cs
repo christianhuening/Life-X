@@ -2,8 +2,15 @@
 
 namespace LifeX.Runtime
 {
-    public class PositionAction : Action
+    public class MoveAction : Action
     {
-        
+        public MoveAction(IVec newPosition)
+        {
+            Position = newPosition;
+        }
+    }
+
+    public class OutOfSightAction : Action
+    {
     }
 }

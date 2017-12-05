@@ -40,7 +40,6 @@ namespace LifeX.API
             return this;
         }
         
-        // TODO: is there a better generic way?
         // Working with memory it is often desirable to forget about something on another Action,
         // e.g. only track sheeps that are in sight, `ForgetIf` is a shorthand for:
         // SubscribeAction<OutOfSightAction>()
@@ -50,12 +49,7 @@ namespace LifeX.API
         // {
         //     return this;
         // }
-        // ^ this would be preferred, but the two actions need to have an distinguishable association!
-        // => Therefore forgettable actions need to fulfill an interface IForgettableAction, which provides
-        //    a GetMemoryKey-method associating memories by some unique key (hash).
-        //    In the above example this would mean, PositionAction and OutOfSightAction have a unique key based on the 
-        //    source-agent.
-        public ActionSubscription<TAction> ForgetIfOutOfSight()
+        public ActionSubscription<TAction> ForgetIf<TForgetAction>() where TForgetAction : Action, IForgettableAction
         {
             return this;
         }

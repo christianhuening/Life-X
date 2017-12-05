@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\LifeX.API\LifeX.API.csproj" />
+    <ProjectReference Include="..\LifeX.Core.Engine\LifeX.Core.Engine.csproj" />
     <ProjectReference Include="..\LifeX.Core.PubSub\LifeX.Core.PubSub.csproj" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 
 namespace LifeX.Runtime
 {
-    public class Parameters
+    public static class Parameter
     {
         public static T Required<T>(string name) where T : IConvertible
         {
