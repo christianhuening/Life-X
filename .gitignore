@@ -22,3 +22,7 @@ TestResult.xml
 # .NET Core and Project Rider files.
 .idea/
 project.lock.json
+
+# NuGet Packages
+*.nupkg
+**/packages/*
