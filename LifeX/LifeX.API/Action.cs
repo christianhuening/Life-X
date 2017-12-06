@@ -1,5 +1,11 @@
 ﻿namespace LifeX.API
 {
+    public enum ActionState
+    {
+        Success,
+        RuleProhibited,
+        Failed
+    }
     
 
     public interface IForgettableAction
