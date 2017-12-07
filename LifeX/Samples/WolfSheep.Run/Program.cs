@@ -38,7 +38,7 @@ namespace WolfSheep.Run
             // create simulation runtime
             var simulationConfig = SimulationConfig.FromDefault();
             // optional: define values other than default, e.g. PubSub mechanism
-            simulationConfig.PubSubMechanism = PubSubMechanism.VoronoiOverlay;
+            simulationConfig.PubSubConfig = GridPubSubConfig.FromDefault();
             var simulation = new Simulation(simulationConfig);
 
             // distribute height data across actors

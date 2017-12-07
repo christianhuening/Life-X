@@ -1,33 +1,10 @@
-﻿using LifeX.API;
+﻿using System;
+using LifeX.API;
 using LifeX.Core.Engine;
 using LifeX.Runtime.Data;
 
 namespace LifeX.Runtime
-{
-    public enum PubSubMechanism
-    {
-        GridBased,
-        VoronoiOverlay,
-        Octree
-    }
-
-    public enum TickMechanism
-    {
-        Exact, // every agent in same tick
-        Elastic // every agent at maximum X ticks apart
-    }
-    
-    public class SimulationConfig
-    {
-        public PubSubMechanism PubSubMechanism = PubSubMechanism.GridBased;
-        public TickMechanism TickMechanism = TickMechanism.Exact;
-        
-        public static SimulationConfig FromDefault()
-        {
-            return new SimulationConfig();
-        }
-    }
-    
+{    
     public class Simulation
     {
         private IEngine _engine;
@@ -35,20 +12,28 @@ namespace LifeX.Runtime
         
         public Simulation(SimulationConfig config)
         {
-            switch (config.TickMechanism)
+            switch (config.EngineConfig)
             {
-                case TickMechanism.Exact:
+                case ExactEngineConfig engineConfig:
                 {
-                    _engine = new ExactEngine();
+                    _engine = new ExactEngine(/* engineConfig */);
                     break;
                 }
-            }
-            switch (config.PubSubMechanism)
-            {
-                case PubSubMechanism.GridBased:
+                case ElasticEngineConfig engineConfig:
                 {
-                    _pubSub = new GridPubSub();
+                    throw new NotImplementedException();
+                }
+            }
+            switch (config.PubSubConfig)
+            {
+                case GridPubSubConfig pubSubConfig:
+                {
+                    _pubSub = new GridPubSub(/* pubSubConfig */);
                     break;
+                }
+                case VoronoiPubSubConfig pubSubConfig:
+                {
+                    throw new NotImplementedException();
                 }
             }
         }
