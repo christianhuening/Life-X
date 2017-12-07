@@ -1,7 +1,6 @@
 using System;
 using LifeX.Test.Helper;
 using Orleans.TestingHost;
-using WolfSheep.Model;
 using Xunit;
 
 namespace LifeX.Test
