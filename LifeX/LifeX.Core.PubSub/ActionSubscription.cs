@@ -46,7 +46,7 @@ namespace LifeX.API
             return this;
         }
 
-        public ActionSubscription<TAction> Memory(IEnumerable<TAction> memory, int count, Func<TAction, TAction, bool> determineMemoryFn = null)
+        public ActionSubscription<TAction> Memory(IMemory<TAction> memory, Func<TAction, TAction, bool> determineMemoryFn = null)
         {
             return this;
         }

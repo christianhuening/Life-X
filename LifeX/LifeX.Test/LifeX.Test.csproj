@@ -11,6 +11,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LifeX.API\LifeX.API.csproj" />
-    <ProjectReference Include="..\Samples\WolfSheep.Model\WolfSheep.Model.csproj" />
   </ItemGroup>
 </Project>

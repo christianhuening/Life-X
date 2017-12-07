@@ -22,7 +22,7 @@ namespace WolfSheep.Model
         public WolfPlan Plan;
         public ISheep Target;
         // public IWolf Leader;
-        public IEnumerable<MoveAction> Sheeps; // can get sheep instances from Action.GetSource<ISheep>()
+        public Memory<MoveAction> Sheeps; // can get sheep instances from Action.GetSource<ISheep>()
         public double CurrentHeight;
         public double ReproductionProbability;
         public double GainFromFood;
@@ -33,11 +33,12 @@ namespace WolfSheep.Model
         public async Task Initialize()
         {
             State.Plan = WolfPlan.WalkAround;
+            State.Sheeps = new Memory<MoveAction>(3);
             
             SubscribeAction<MoveAction>()
                 .From<ISheep>()
                 .Near(Parameter.Optional<double>("WOLF_VIEW_RADIUS", 5.0d))
-                .Memory(State.Sheeps, 3, (old, recent) => State.Position.DistanceTo(old.Position) > State.Position.DistanceTo(recent.Position))
+                .Memory(State.Sheeps, (old, recent) => State.Position.DistanceTo(old.Position) > State.Position.DistanceTo(recent.Position))
                 .ForgetIf<OutOfSightAction>() // both action types need to implement IForgettable action
                 .ForEach((action) => { // instead of lambda member function is also possible
                     if (State.Hunger > 100)

@@ -15,11 +15,12 @@ namespace LifeX.Test
         {
             _cluster = fixture.Cluster;
         }
+        
         [Fact]
         public async void SetupTest()
         {
-            var wolf = _cluster.GrainFactory.GetGrain<IWolf>(0);
-            await wolf.Tick();
+            var basicAgent = _cluster.GrainFactory.GetGrain<IBasicAgent>(0);
+            await basicAgent.Tick();
             Assert.Equal(true, true);
         }
     }
