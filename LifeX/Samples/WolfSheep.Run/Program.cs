@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using LifeX.API;
+using LifeX.API.Config;
 using LifeX.Runtime;
 using LifeX.Runtime.Data;
 using WolfSheep.Model;
@@ -45,8 +46,8 @@ namespace WolfSheep.Run
             simulation.DistributeLayerData<IGrass>(grassHeightGrid);
 
             //
-            IVec[] wolfPositions = Distribution.RandomPositions2D(wolfCount);
-            IVec[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
+            IVector[] wolfPositions = Distribution.RandomPositions2D(wolfCount);
+            IVector[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
             //
             simulation.DistributeAgents<WolfAgent>(wolfPositions);

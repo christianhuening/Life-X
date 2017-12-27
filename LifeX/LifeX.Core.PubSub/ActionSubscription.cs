@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using LifeX.API.Action;
+using LifeX.API.Agent;
 
 // TODO: Use type GUID to map types to actions et cetera?
 //
@@ -17,9 +18,9 @@ using System.Collections.Generic;
 //  GUID is stable across compilations and runs.
 //  (This is true for the SSCLI implementation and not guaranteed to be true for the actual CLR, past, present or future.)
 
-namespace LifeX.API
+namespace LifeX.Core.PubSub
 {
-    public class ActionSubscription<TAction> where TAction : Action
+    public class ActionSubscription<TAction> where TAction : API.Action.Action
     {
         // Can subscribe to specific type of agent
         public ActionSubscription<TAction> From<TAgent>() where TAgent : IAgent
@@ -65,7 +66,7 @@ namespace LifeX.API
         // {
         //     return this;
         // }
-        public ActionSubscription<TAction> ForgetIf<TForgetAction>() where TForgetAction : Action, IForgettableAction
+        public ActionSubscription<TAction> ForgetIf<TForgetAction>() where TForgetAction : API.Action.Action, IForgettableAction
         {
             return this;
         }

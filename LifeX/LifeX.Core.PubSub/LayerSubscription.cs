@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LifeX.API
+namespace LifeX.Core.PubSub
 {
     public class LayerSubscription<TLayer>
     {

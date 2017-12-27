@@ -5,7 +5,7 @@ using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
 using Orleans.Runtime.Host;
 
-namespace Orly.Host
+namespace LifeX.Host
 {
     class OrleansHostWrapper
     {

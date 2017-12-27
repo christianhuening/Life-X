@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API;
+using LifeX.API.Agent;
 
 namespace LifeX.Core.Engine
 {

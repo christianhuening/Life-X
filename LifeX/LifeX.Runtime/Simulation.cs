@@ -1,6 +1,10 @@
 ﻿using System;
 using LifeX.API;
+using LifeX.API.Action;
+using LifeX.API.Agent;
+using LifeX.API.Config;
 using LifeX.Core.Engine;
+using LifeX.Core.PubSub;
 using LifeX.Runtime.Data;
 
 namespace LifeX.Runtime
@@ -43,7 +47,7 @@ namespace LifeX.Runtime
             // TODO: TLayer runtime casting and DataAny checks if they fit their `TValue` type necessary 
         }
 
-        public void DistributeAgents<TAgent>(IVec[] positions) where TAgent : IAgent
+        public void DistributeAgents<TAgent>(IVector[] positions) where TAgent : IAgent
         {
             TAgent[] agents = null; // TODO: create agents at positions
             foreach (var agent in agents)

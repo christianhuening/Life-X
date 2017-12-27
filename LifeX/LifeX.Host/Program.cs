@@ -1,7 +1,7 @@
 ﻿using System;
 using Orleans.Runtime.Configuration;
 
-namespace Orly.Host
+namespace LifeX.Host
 {
     public class Program
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using LifeX.API;
+using LifeX.API.Agent;
 using LifeX.Runtime;
 
 namespace LifeX.Test

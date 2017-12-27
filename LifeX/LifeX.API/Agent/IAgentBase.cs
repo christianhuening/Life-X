@@ -1,4 +1,4 @@
-﻿namespace LifeX.API
+﻿namespace LifeX.API.Agent
 {
     public interface IAgentBase
     {

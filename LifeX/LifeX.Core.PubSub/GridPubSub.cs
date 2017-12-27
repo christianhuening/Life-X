@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
+using LifeX.API.Action;
+using LifeX.API.Agent;
 
-namespace LifeX.API
+namespace LifeX.Core.PubSub
 {
     public class GridPubSub : IPubSub
     {

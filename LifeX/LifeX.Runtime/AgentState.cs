@@ -1,8 +1,10 @@
-﻿namespace LifeX.API
+﻿using LifeX.API;
+
+namespace LifeX.Runtime
 {
     public class AgentState
     {
-        public IVec Position;
+        public IVector Position;
         public long TickCount;
         public double DeltaTime;
     }

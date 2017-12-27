@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace LifeX.API
+namespace LifeX.API.Layer
 {
     public interface ILayer : Orleans.IGrainWithIntegerKey, ILayerBase
     {

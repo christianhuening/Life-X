@@ -1,10 +1,11 @@
 ﻿using LifeX.API;
+using LifeX.API.Action;
 
 namespace LifeX.Runtime
 {
     public class MoveAction : Action
     {
-        public MoveAction(IVec newPosition)
+        public MoveAction(IVector newPosition)
         {
             Position = newPosition;
         }
