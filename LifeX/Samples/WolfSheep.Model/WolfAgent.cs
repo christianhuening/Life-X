@@ -62,7 +62,7 @@ namespace WolfSheep.Model
                 }
             }
 
-            TryAction(new MoveAction(null));
+            await TryAction(new MoveAction(null));
         }
     }
 

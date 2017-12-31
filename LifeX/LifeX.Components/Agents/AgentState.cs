@@ -1,6 +1,6 @@
-﻿using LifeX.API;
+﻿using LifeX.API.Environment;
 
-namespace LifeX.Runtime
+namespace LifeX.Components.Agents
 {
     public class AgentState
     {

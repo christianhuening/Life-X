@@ -5,13 +5,13 @@ using LifeX.Core.PubSub;
 using Orleans;
 using Orleans.Concurrency;
 
-namespace LifeX.Runtime
+namespace LifeX.Components.Agents
 {
     [Reentrant]
     public abstract class AgentBase<T> : Grain<T>, IAgentBase 
         where T : AgentState, new()
     {
-        protected ActionSubscription<TAction> SubscribeAction<TAction>() where TAction : API.Action.Action
+        protected ActionSubscription<TAction> SubscribeAction<TAction>() where TAction : IAction
         {
             return new ActionSubscription<TAction>();
         }
@@ -22,7 +22,7 @@ namespace LifeX.Runtime
             return new LayerSubscription<TLayer>();
         }
         
-        protected Task<ActionState> TryAction<TAction>(TAction action) where TAction : API.Action.Action
+        protected Task<ActionState> TryAction<TAction>(TAction action) where TAction : IAction
         {
             if (action.Position == null)
             {

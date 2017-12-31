@@ -1,9 +1,9 @@
 ﻿using System;
-using System.IO;
-using LifeX.API;
 using LifeX.API.Config;
+using LifeX.API.Environment;
+using LifeX.Components.Data;
+using LifeX.Initialization;
 using LifeX.Runtime;
-using LifeX.Runtime.Data;
 using WolfSheep.Model;
 
 namespace WolfSheep.Run
@@ -13,10 +13,10 @@ namespace WolfSheep.Run
         static void Main(string[] args)
         {
             // Client setup
-            var config = Client.DefaultConfiguration();
+            var config = DefaultClient.DefaultConfiguration();
             try
             {
-                Client.InitializeWithRetries(config, initializeAttemptsBeforeFailing: 5);
+                DefaultClient.InitializeWithRetries(config, initializeAttemptsBeforeFailing: 5);
             }
             catch (Exception ex)
             {
@@ -30,7 +30,7 @@ namespace WolfSheep.Run
 
             // load height data
             DataGrid<double> grassHeightGrid;
-            using (FileStream data = FileManager.Open(heightMapFilename))
+            using (var data = FileManager.Open(heightMapFilename))
             {
                 // Import must handle all greyscale type datasets, not(!) semantic
                 grassHeightGrid = Import.FromGreyscaleMap(data);
@@ -43,14 +43,14 @@ namespace WolfSheep.Run
             var simulation = new Simulation(simulationConfig);
 
             // distribute height data across actors
-            simulation.DistributeLayerData<IGrass>(grassHeightGrid);
+            Distribution.DistributeLayerData<IGrass>(grassHeightGrid);
 
             //
             IVector[] wolfPositions = Distribution.RandomPositions2D(wolfCount);
             IVector[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
             //
-            simulation.DistributeAgents<WolfAgent>(wolfPositions);
+            Distribution.DistributeAgents<WolfAgent>(wolfPositions);
             simulation.DistributeAgents<SheepAgent>(sheepPositions);
 
             // setup global rules and effects

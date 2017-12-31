@@ -1,4 +1,4 @@
-﻿namespace LifeX.Runtime
+﻿namespace LifeX.Components.Layers
 {
     public class LayerState
     {

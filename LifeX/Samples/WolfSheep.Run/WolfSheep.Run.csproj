@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LifeX.API\LifeX.API.csproj" />
+    <ProjectReference Include="..\..\LifeX.Initialization\LifeX.Initialization.csproj" />
     <ProjectReference Include="..\..\LifeX.Runtime\LifeX.Runtime.csproj" />
     <ProjectReference Include="..\WolfSheep.Model\WolfSheep.Model.csproj" />
   </ItemGroup>

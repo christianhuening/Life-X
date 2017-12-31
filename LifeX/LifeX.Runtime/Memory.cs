@@ -3,7 +3,7 @@ using LifeX.API.Action;
 
 namespace LifeX.Runtime
 {
-    public class Memory<TAction> : IMemory<TAction> where TAction : Action
+    public class Memory<TAction> : IMemory<TAction> where TAction : IAction
     {
         public Memory(int maxMemoryCapacity)
         {

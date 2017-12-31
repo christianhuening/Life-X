@@ -6,7 +6,7 @@ using Orleans.Runtime.Configuration;
 
 namespace LifeX.Runtime
 {
-    public class Client
+    public static class DefaultClient
     {
         public static ClientConfiguration DefaultConfiguration()
         {

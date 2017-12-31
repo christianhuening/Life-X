@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
 
-namespace LifeX.API
+namespace LifeX.API.Engine
 {
     public interface IEngine
     {

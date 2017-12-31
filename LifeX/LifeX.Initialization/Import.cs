@@ -1,7 +1,7 @@
 ﻿using System.IO;
-using LifeX.Runtime.Data;
+using LifeX.Components.Data;
 
-namespace LifeX.Runtime
+namespace LifeX.Initialization
 {
     public static class Import
     {

@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using LifeX.API;
 using LifeX.API.Agent;
+using LifeX.Components.Actions;
+using LifeX.Components.Agents;
 using LifeX.Runtime;
 
 namespace LifeX.Test

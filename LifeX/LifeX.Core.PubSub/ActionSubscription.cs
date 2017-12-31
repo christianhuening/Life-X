@@ -20,7 +20,7 @@ using LifeX.API.Agent;
 
 namespace LifeX.Core.PubSub
 {
-    public class ActionSubscription<TAction> where TAction : API.Action.Action
+    public class ActionSubscription<TAction> where TAction : IAction
     {
         // Can subscribe to specific type of agent
         public ActionSubscription<TAction> From<TAgent>() where TAgent : IAgent
@@ -66,7 +66,7 @@ namespace LifeX.Core.PubSub
         // {
         //     return this;
         // }
-        public ActionSubscription<TAction> ForgetIf<TForgetAction>() where TForgetAction : API.Action.Action, IForgettableAction
+        public ActionSubscription<TAction> ForgetIf<TForgetAction>() where TForgetAction : IForgettableAction
         {
             return this;
         }
