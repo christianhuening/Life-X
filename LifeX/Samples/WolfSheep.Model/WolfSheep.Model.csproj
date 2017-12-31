@@ -4,6 +4,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LifeX.API\LifeX.API.csproj" />
+    <ProjectReference Include="..\..\LifeX.Components\LifeX.Components.csproj">
+      <Project>{64CEDD42-7AB1-4495-B504-F9A0628DB7B1}</Project>
+      <Name>LifeX.Components</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\LifeX.Runtime\LifeX.Runtime.csproj" />
   </ItemGroup>
 </Project>

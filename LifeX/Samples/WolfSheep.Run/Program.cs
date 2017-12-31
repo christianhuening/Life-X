@@ -51,7 +51,7 @@ namespace WolfSheep.Run
 
             //
             Distribution.DistributeAgents<WolfAgent>(wolfPositions);
-            simulation.DistributeAgents<SheepAgent>(sheepPositions);
+            Distribution.DistributeAgents<SheepAgent>(sheepPositions);
 
             // setup global rules and effects
             // simulation.AddRule(/* ... */)

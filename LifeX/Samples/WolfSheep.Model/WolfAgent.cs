@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using LifeX.API;
+﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
+using LifeX.Components.Actions;
+using LifeX.Components.Agents;
 using LifeX.Runtime;
 
 namespace WolfSheep.Model
