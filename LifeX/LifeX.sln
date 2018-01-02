@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.PubSub", "LifeX.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.Environment", "LifeX.Core.Environment\LifeX.Core.Environment.csproj", "{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Runtime", "LifeX.Runtime\LifeX.Runtime.csproj", "{0D92FF34-0673-4F43-A790-566FF05CAD6C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.Engine", "LifeX.Core.Engine\LifeX.Core.Engine.csproj", "{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{18F2159D-9740-4F7A-B0E8-37057E5C79ED}"
@@ -28,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Initialization", "Lif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Test.Helper", "LifeX.Test.Helper\LifeX.Test.Helper.csproj", "{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Client", "LifeX.Client\LifeX.Client.csproj", "{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +46,6 @@ Global
 		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D92FF34-0673-4F43-A790-566FF05CAD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D92FF34-0673-4F43-A790-566FF05CAD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D92FF34-0673-4F43-A790-566FF05CAD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D92FF34-0673-4F43-A790-566FF05CAD6C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,6 +82,10 @@ Global
 		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{783D14D9-C3F5-47A6-A501-E258701823C1} = {18F2159D-9740-4F7A-B0E8-37057E5C79ED}

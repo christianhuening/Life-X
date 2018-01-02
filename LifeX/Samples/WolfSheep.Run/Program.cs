@@ -50,8 +50,8 @@ namespace WolfSheep.Run
             IVector[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
             //
-            Distribution.DistributeAgents<WolfAgent>(wolfPositions);
-            Distribution.DistributeAgents<SheepAgent>(sheepPositions);
+            Distribution.PlaceAgents<WolfAgent>(wolfPositions);
+            Distribution.PlaceAgents<SheepAgent>(sheepPositions);
 
             // setup global rules and effects
             // simulation.AddRule(/* ... */)
