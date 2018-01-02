@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Config", "LifeX.Confi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Initialization", "LifeX.Initialization\LifeX.Initialization.csproj", "{2E3F60F5-F31F-4B23-928B-8F2C9F5162B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Test.Helper", "LifeX.Test.Helper\LifeX.Test.Helper.csproj", "{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{2E3F60F5-F31F-4B23-928B-8F2C9F5162B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E3F60F5-F31F-4B23-928B-8F2C9F5162B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E3F60F5-F31F-4B23-928B-8F2C9F5162B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD9CB38-94B2-4771-BCD7-FC5C26851BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{783D14D9-C3F5-47A6-A501-E258701823C1} = {18F2159D-9740-4F7A-B0E8-37057E5C79ED}

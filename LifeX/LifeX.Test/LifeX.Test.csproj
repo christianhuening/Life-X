@@ -16,5 +16,6 @@
       <Name>LifeX.Components</Name>
     </ProjectReference>
     <ProjectReference Include="..\LifeX.Runtime\LifeX.Runtime.csproj" />
+    <ProjectReference Include="..\LifeX.Test.Helper\LifeX.Test.Helper.csproj" />
   </ItemGroup>
 </Project>

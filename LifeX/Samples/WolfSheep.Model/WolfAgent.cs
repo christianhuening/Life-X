@@ -34,13 +34,13 @@ namespace WolfSheep.Model
         public async Task Initialize()
         {
             State.Plan = WolfPlan.WalkAround;
-            State.Sheeps = new Memory<MoveAction>(3);
+            State.Sheeps = new Memory<MoveAction>(3, MemoryStrategy.FORGET_OUT_OF_DISTANCE);
             
             SubscribeAction<MoveAction>()
                 .From<ISheep>()
                 .Near(Parameter.Optional<double>("WOLF_VIEW_RADIUS", 5.0d))
                 .Memory(State.Sheeps, (old, recent) => State.Position.DistanceTo(old.Position) > State.Position.DistanceTo(recent.Position))
-                .ForgetIf<OutOfSightAction>() // both action types need to implement IForgettable action
+                //.ForgetIf<OutOfSightAction>() // both action types need to implement IForgettable action
                 .ForEach((action) => { // instead of lambda member function is also possible
                     if (State.Hunger > 100)
                     {
