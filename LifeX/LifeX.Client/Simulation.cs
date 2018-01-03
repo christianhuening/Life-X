@@ -40,7 +40,6 @@ namespace LifeX.Runtime
             }
         }
 
-
         public void Start()
         {
             _engine.Start();
