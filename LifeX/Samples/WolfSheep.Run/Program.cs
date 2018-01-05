@@ -46,12 +46,10 @@ namespace WolfSheep.Run
             Distribution.DistributeLayerData<IGrass>(grassHeightGrid);
 
             //
-            IVector[] wolfPositions = Distribution.RandomPositions2D(wolfCount);
-            IVector[] sheepPositions = Distribution.RandomPositions2D(sheepCount);
+            var wolfPositions = Distribution.RandomPositions2D(wolfCount);
+            var sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
-            //
-            Distribution.PlaceAgents<WolfAgent>(wolfPositions);
-            Distribution.PlaceAgents<SheepAgent>(sheepPositions);
+            // create Agents automatically, or manually or however you like...
 
             // setup global rules and effects
             // simulation.AddRule(/* ... */)

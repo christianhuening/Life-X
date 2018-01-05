@@ -18,16 +18,5 @@ namespace LifeX.Initialization
             // TODO: TLayer runtime casting and DataAny checks if they fit their `TValue` type necessary 
         }
 
-        public static void PlaceAgents<TAgent>(IVector[] positions, IPubSub pubSub, IEngine engine) where TAgent : IAgent
-        {
-            TAgent[] agents = null; // TODO: create agents at positions
-            if (agents == null) return;
-            foreach (var agent in agents)
-            {
-                pubSub.Insert(agent);
-                engine.Register(agent);
-            }
-        }
-
     }
 }

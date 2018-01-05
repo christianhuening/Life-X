@@ -19,5 +19,13 @@
       <Project>{1486E908-763D-407F-8C47-CFB17687664C}</Project>
       <Name>LifeX.Config</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LifeX.Core.Engine\LifeX.Core.Engine.csproj">
+      <Project>{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}</Project>
+      <Name>LifeX.Core.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LifeX.Core.PubSub\LifeX.Core.PubSub.csproj">
+      <Project>{6F386A40-0F65-4F71-981C-1EE31557DE3F}</Project>
+      <Name>LifeX.Core.PubSub</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
