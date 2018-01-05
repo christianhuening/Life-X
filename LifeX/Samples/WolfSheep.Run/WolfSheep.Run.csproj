@@ -5,6 +5,14 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\LifeX.API\LifeX.API.csproj" />
+    <ProjectReference Include="..\..\LifeX.Client\LifeX.Client.csproj">
+      <Project>{CCDF3DC7-BC55-490B-97AA-6B0106E4C9AB}</Project>
+      <Name>LifeX.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LifeX.Config\LifeX.Config.csproj">
+      <Project>{1486E908-763D-407F-8C47-CFB17687664C}</Project>
+      <Name>LifeX.Config</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\LifeX.Initialization\LifeX.Initialization.csproj" />
     <ProjectReference Include="..\..\LifeX.Runtime\LifeX.Runtime.csproj" />
     <ProjectReference Include="..\WolfSheep.Model\WolfSheep.Model.csproj" />
