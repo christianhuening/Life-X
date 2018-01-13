@@ -28,4 +28,7 @@
       <Name>LifeX.Core.PubSub</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.0.5" />
+  </ItemGroup>
 </Project>

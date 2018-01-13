@@ -5,9 +5,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-    <PackageReference Include="Microsoft.Orleans.TestingHost" Version="2.0.0-beta1" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.0.5" />
+    <PackageReference Include="Microsoft.Orleans.TestingHost" Version="2.0.0-beta3" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LifeX.API\LifeX.API.csproj" />
@@ -15,7 +16,6 @@
       <Project>{64CEDD42-7AB1-4495-B504-F9A0628DB7B1}</Project>
       <Name>LifeX.Components</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LifeX.Runtime\LifeX.Runtime.csproj" />
     <ProjectReference Include="..\LifeX.Test.Helper\LifeX.Test.Helper.csproj" />
   </ItemGroup>
 </Project>

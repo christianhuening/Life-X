@@ -14,7 +14,9 @@
       <Name>LifeX.Config</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\LifeX.Initialization\LifeX.Initialization.csproj" />
-    <ProjectReference Include="..\..\LifeX.Runtime\LifeX.Runtime.csproj" />
     <ProjectReference Include="..\WolfSheep.Model\WolfSheep.Model.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.0.5" />
   </ItemGroup>
 </Project>
