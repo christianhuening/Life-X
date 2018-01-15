@@ -1,23 +1,23 @@
-using LifeX.Test.Helper;
-using Orleans.TestingHost;
+using Orleans.TestKit;
 using Xunit;
+using LifeX.Test.Helper;
 
 namespace LifeX.Test
 {
-    [Collection(ClusterCollection.Name)]
+    [Collection(SiloCollection.Name)]
     public class BasicAgentTest
     {
-        private readonly TestCluster _cluster;
+        private readonly TestKitSilo _silo;
 
-        public BasicAgentTest(ClusterFixture fixture)
+        public BasicAgentTest(SiloFixture fixture)
         {
-            _cluster = fixture.Cluster;
+            _silo = fixture.Silo;
         }
         
         [Fact]
         public async void SetupTest()
         {
-            var basicAgent = _cluster.GrainFactory.GetGrain<IBasicAgent>(0);
+            var basicAgent = _silo.GrainFactory.GetGrain<IBasicAgent>(0);
             await basicAgent.Tick();
             Assert.Equal(true, true);
         }
