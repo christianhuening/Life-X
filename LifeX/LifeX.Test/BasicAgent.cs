@@ -2,7 +2,7 @@
 using LifeX.API.Agent;
 using LifeX.Components.Actions;
 using LifeX.Components.Agents;
-using LifeX.Runtime;
+using LifeX.Components.Memory;
 
 namespace LifeX.Test
 {

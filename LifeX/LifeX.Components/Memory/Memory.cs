@@ -1,7 +1,6 @@
-﻿using LifeX.API;
-using LifeX.API.Action;
+﻿using LifeX.API.Action;
 
-namespace LifeX.Runtime
+namespace LifeX.Components.Memory
 {
     public class Memory<TAction> : IMemory<TAction> where TAction : IAction
     {

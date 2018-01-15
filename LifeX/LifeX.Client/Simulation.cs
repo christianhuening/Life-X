@@ -2,14 +2,15 @@
 using LifeX.API.Action;
 using LifeX.API.Config;
 using LifeX.API.Engine;
+using LifeX.Config;
 using LifeX.Core.Engine;
 using LifeX.Core.PubSub;
 
-namespace LifeX.Runtime
+namespace LifeX.Client
 {    
     public class Simulation
     {
-        private IEngine _engine;
+        private readonly IEngine _engine;
         private IPubSub _pubSub;
         
         public Simulation(SimulationConfig config)

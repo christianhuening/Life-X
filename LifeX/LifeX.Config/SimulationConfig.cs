@@ -1,4 +1,6 @@
-﻿namespace LifeX.API.Config
+﻿using LifeX.API.Config;
+
+namespace LifeX.Config
 {
     
     public class SimulationConfig

@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 using LifeX.API.Config;
-using LifeX.API.Environment;
+using LifeX.Client;
+using LifeX.Components.Agents;
 using LifeX.Components.Data;
+using LifeX.Config;
 using LifeX.Initialization;
 using LifeX.Runtime;
 using WolfSheep.Model;
@@ -12,15 +15,17 @@ namespace WolfSheep.Run
     {
         static void Main(string[] args)
         {
+            
+            
             // Client setup
             var config = DefaultClient.DefaultConfiguration();
             try
             {
-                DefaultClient.InitializeWithRetries(config, initializeAttemptsBeforeFailing: 5);
+                DefaultClient.Initialize(config);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Orleans client initialization failed failed due to {ex}");
+                Console.WriteLine($"Orleans client initialization failed due to {ex}");
             }
             
             // get simulation configuration parameters

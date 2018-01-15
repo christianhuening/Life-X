@@ -2,12 +2,15 @@
 using LifeX.API.Agent;
 using LifeX.API.Environment;
 
-public class OutOfSightAction : IForgettableAction
+namespace LifeX.Components.Actions
 {
-  public IVector Position { get; set; }
-  public IAgent Source { get; set; }
-  public byte[] GetMemoryKey()
+  public class OutOfSightAction : IForgettableAction
   {
-    throw new System.NotImplementedException();
+    public IVector Position { get; set; }
+    public IAgent Source { get; set; }
+    public byte[] GetMemoryKey()
+    {
+      throw new System.NotImplementedException();
+    }
   }
 }

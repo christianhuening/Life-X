@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LifeX.Runtime
+namespace LifeX.Components.Agents
 {
     public class MissingParameterException : Exception
     {

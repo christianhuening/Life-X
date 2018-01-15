@@ -4,25 +4,28 @@ using Orleans;
 using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
 
-namespace LifeX.Runtime
+namespace LifeX.Client
 {
-    public static class DefaultClient
+    public class DefaultClient
     {
         public static ClientConfiguration DefaultConfiguration()
         {
             return ClientConfiguration.LocalhostSilo();
         }
         
-        public static void InitializeWithRetries(ClientConfiguration config, int initializeAttemptsBeforeFailing)
+        public static void Initialize(ClientConfiguration config, int initializeAttemptsBeforeFailing=5)
         {
-            int attempt = 0;
-            while (true)
+            var attempt = 0;
+            while (attempt < initializeAttemptsBeforeFailing)
             {
                 try
                 {
-                    GrainClient.Initialize(config);
+
+                    var client = new ClientBuilder().UseConfiguration(config).Build();
+                    client.Connect().Wait();
                     Console.WriteLine("Client successfully connect to silo host");
                     break;
+
                 }
                 catch (SiloUnavailableException)
                 {
@@ -34,6 +37,8 @@ namespace LifeX.Runtime
                     }
                     Thread.Sleep(TimeSpan.FromSeconds(2));
                 }
+
+                attempt++;
             }
         }
     }

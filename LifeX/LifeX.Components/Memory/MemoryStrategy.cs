@@ -1,4 +1,4 @@
-﻿namespace LifeX.Runtime
+﻿namespace LifeX.Components.Memory
 {
     public enum MemoryStrategy
     {
