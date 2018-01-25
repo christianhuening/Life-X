@@ -28,6 +28,7 @@ namespace WolfSheep.Run
                 Console.WriteLine($"Orleans client initialization failed due to {ex}");
             }
             
+            /*
             // get simulation configuration parameters
             var heightMapFilename = Parameter.Required<string>("HEIGHT_MAP_FILE");
             var wolfCount = Parameter.Optional<long>("WOLF_COUNT", 10_000_000);
@@ -40,6 +41,8 @@ namespace WolfSheep.Run
                 // Import must handle all greyscale type datasets, not(!) semantic
                 grassHeightGrid = Import.FromGreyscaleMap(data);
             }
+            */
+            
 
             // create simulation runtime
             var simulationConfig = SimulationConfig.FromDefault();
@@ -48,11 +51,11 @@ namespace WolfSheep.Run
             var simulation = new Simulation(simulationConfig);
 
             // distribute height data across actors
-            Distribution.DistributeLayerData<IGrass>(grassHeightGrid);
+            //Distribution.DistributeLayerData<IGrass>(grassHeightGrid);
 
             //
-            var wolfPositions = Distribution.RandomPositions2D(wolfCount);
-            var sheepPositions = Distribution.RandomPositions2D(sheepCount);
+            //var wolfPositions = Distribution.RandomPositions2D(wolfCount);
+            //var sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
             // create Agents automatically, or manually or however you like...
 

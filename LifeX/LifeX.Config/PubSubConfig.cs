@@ -1,4 +1,4 @@
-﻿namespace LifeX.API.Config
+﻿namespace LifeX.Config
 {
     public abstract class PubSubConfig
     {
