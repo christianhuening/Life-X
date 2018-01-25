@@ -8,6 +8,7 @@ using LifeX.Config;
 using LifeX.Initialization;
 using LifeX.Runtime;
 using WolfSheep.Model;
+using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Run
 {
@@ -16,12 +17,11 @@ namespace WolfSheep.Run
         static void Main(string[] args)
         {
             
-            
             // Client setup
             var config = DefaultClient.DefaultConfiguration();
             try
             {
-                DefaultClient.Initialize(config);
+                DefaultClient.Initialize(config, new Type[]{typeof(IGrass),typeof(ISheep), typeof(IWolf)});
             }
             catch (Exception ex)
             {

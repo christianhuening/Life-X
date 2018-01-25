@@ -1,13 +1,11 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
 using LifeX.Components.Agents;
+using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Model
 {
-    public interface ISheep : IAgent
-    {
-        Task<bool> TryKill();
-    }
+
     
     public class SheepState : AgentState
     {

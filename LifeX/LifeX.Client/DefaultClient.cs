@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Reflection;
 using System.Threading;
+using Microsoft.CodeAnalysis;
 using Orleans;
 using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
@@ -13,15 +15,24 @@ namespace LifeX.Client
             return ClientConfiguration.LocalhostSilo();
         }
         
-        public static void Initialize(ClientConfiguration config, int initializeAttemptsBeforeFailing=5)
+        public static void Initialize(ClientConfiguration config, Type[] agents, int initializeAttemptsBeforeFailing=5)
         {
             var attempt = 0;
             while (attempt < initializeAttemptsBeforeFailing)
             {
                 try
                 {
+                    
 
-                    var client = new ClientBuilder().UseConfiguration(config).Build();
+                    var builder = new ClientBuilder()
+                        .UseConfiguration(config);
+                    
+                    foreach (var agentType in agents)
+                    {
+                        builder.ConfigureApplicationParts(parts => parts.AddApplicationPart(agentType.Assembly));
+                    }
+                    
+                    var client = builder.Build();
                     client.Connect().Wait();
                     Console.WriteLine("Client successfully connect to silo host");
                     break;

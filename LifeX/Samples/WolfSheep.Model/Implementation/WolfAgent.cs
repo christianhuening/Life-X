@@ -3,13 +3,11 @@ using LifeX.API.Agent;
 using LifeX.Components.Actions;
 using LifeX.Components.Agents;
 using LifeX.Components.Memory;
+using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Model
 {
-    public interface IWolf : IAgent
-    {
-        
-    }
+
     
     public enum WolfPlan
     {

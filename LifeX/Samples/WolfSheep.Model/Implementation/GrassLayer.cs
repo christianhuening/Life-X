@@ -1,13 +1,10 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Layer;
 using LifeX.Components.Layers;
+using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Model
 {
-    public interface IGrass : ILayer
-    {
-        Task<double> EatBiomass(double amount);
-    }
 
     public class GrassState : LayerState
     {
