@@ -1,6 +1,8 @@
 ﻿using System;
 using LifeX.API.Action;
+using LifeX.API.Agent;
 using LifeX.API.Engine;
+using LifeX.Client.Interfaces;
 using LifeX.Config;
 using LifeX.Config.Engine;
 using LifeX.Config.Environment;
@@ -9,7 +11,7 @@ using LifeX.Core.PubSub;
 
 namespace LifeX.Client
 {    
-    public class Simulation
+    public class Simulation : ISimulation
     {
         private readonly IEngine _engine;
         
@@ -24,14 +26,40 @@ namespace LifeX.Client
                 }
                 case ElasticEngineConfig engineConfig:
                 {
-                    throw new NotImplementedException();
+                    _engine = new ElasticEngine(engineConfig);
+                    break;
                 }
             }
+        }
+
+        public void AddAgent(IAgent agent)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
         }
 
         public void Start()
         {
             _engine.Start();
+        }
+
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Pause()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Resume()
+        {
+            throw new NotImplementedException();
         }
     }
 }
