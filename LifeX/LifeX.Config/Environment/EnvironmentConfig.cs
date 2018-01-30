@@ -1,4 +1,4 @@
-﻿namespace LifeX.Config
+﻿namespace LifeX.Config.Environment
 {
     public class EnvironmentConfig
     {

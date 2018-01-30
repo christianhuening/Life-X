@@ -1,4 +1,5 @@
-﻿using LifeX.API.Config;
+﻿using LifeX.Config.Engine;
+using LifeX.Config.Environment;
 
 namespace LifeX.Config
 {
@@ -18,7 +19,7 @@ namespace LifeX.Config
         
         public static SimulationConfig FromDefault()
         {
-            return new SimulationConfig(EnvironmentConfig.FromDefault(), GridPubSubConfig.FromDefault(), ExactEngineConfig.FromDefault());
+            return new SimulationConfig(EnvironmentConfig.FromDefault(), GridPubSubConfig.FromDefault(), ElasticEngineConfig.FromDefault());
         }
     }
 }

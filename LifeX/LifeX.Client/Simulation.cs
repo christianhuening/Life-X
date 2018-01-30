@@ -1,8 +1,9 @@
 ﻿using System;
 using LifeX.API.Action;
-using LifeX.API.Config;
 using LifeX.API.Engine;
 using LifeX.Config;
+using LifeX.Config.Engine;
+using LifeX.Config.Environment;
 using LifeX.Core.Engine;
 using LifeX.Core.PubSub;
 
@@ -11,7 +12,6 @@ namespace LifeX.Client
     public class Simulation
     {
         private readonly IEngine _engine;
-        private IPubSub _pubSub;
         
         public Simulation(SimulationConfig config)
         {
@@ -19,22 +19,10 @@ namespace LifeX.Client
             {
                 case ExactEngineConfig engineConfig:
                 {
-                    _engine = new ExactEngine(/* engineConfig */);
+                    _engine = new ConservativeEngine(/* engineConfig */);
                     break;
                 }
                 case ElasticEngineConfig engineConfig:
-                {
-                    throw new NotImplementedException();
-                }
-            }
-            switch (config.PubSubConfig)
-            {
-                case GridPubSubConfig pubSubConfig:
-                {
-                    _pubSub = new GridPubSub(/* pubSubConfig */);
-                    break;
-                }
-                case VoronoiPubSubConfig pubSubConfig:
                 {
                     throw new NotImplementedException();
                 }

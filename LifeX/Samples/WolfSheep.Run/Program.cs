@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Threading.Tasks;
-using LifeX.API.Config;
 using LifeX.Client;
-using LifeX.Components.Agents;
-using LifeX.Components.Data;
 using LifeX.Config;
-using LifeX.Initialization;
-using LifeX.Runtime;
-using WolfSheep.Model;
+using LifeX.Config.Environment;
 using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Run
@@ -21,7 +15,8 @@ namespace WolfSheep.Run
             var config = DefaultClient.DefaultConfiguration();
             try
             {
-                DefaultClient.Initialize(config, new Type[]{typeof(IGrass),typeof(ISheep), typeof(IWolf)});
+                // This needs to be automated, i.e. have a LayerLoader equivalent
+                DefaultClient.Initialize(config, new[]{typeof(IGrass),typeof(ISheep), typeof(IWolf)});
             }
             catch (Exception ex)
             {

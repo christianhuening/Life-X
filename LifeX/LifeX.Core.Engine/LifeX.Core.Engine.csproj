@@ -4,5 +4,9 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\LifeX.API\LifeX.API.csproj" />
+    <ProjectReference Include="..\LifeX.Config\LifeX.Config.csproj">
+      <Project>{1486E908-763D-407F-8C47-CFB17687664C}</Project>
+      <Name>LifeX.Config</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
