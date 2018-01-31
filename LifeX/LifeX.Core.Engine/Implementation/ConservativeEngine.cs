@@ -1,19 +1,18 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
 using LifeX.API.Engine;
-using LifeX.Config.Engine;
+using Orleans;
 
-namespace LifeX.Core.Engine
+namespace LifeX.Core.Engine.Implementation
 {
-    public class ElasticEngine : IEngine
+    /// <summary>
+    /// A conservative executiopn engin
+    /// </summary>
+    public class ConservativeEngine : Grain, IEngine 
     {
-        private ElasticEngineConfig _elasticEngineConfi;
-
-        public ElasticEngine(ElasticEngineConfig elasticEngineConfi)
-        {
-            _elasticEngineConfi = elasticEngineConfi;
-        }
-
+        
+        
+        
         public Task Register(IAgent agent)
         {
             throw new System.NotImplementedException();

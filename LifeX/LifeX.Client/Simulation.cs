@@ -7,6 +7,7 @@ using LifeX.Config;
 using LifeX.Config.Engine;
 using LifeX.Config.Environment;
 using LifeX.Core.Engine;
+using LifeX.Core.Engine.Implementation;
 using LifeX.Core.PubSub;
 
 namespace LifeX.Client
