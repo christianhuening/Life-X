@@ -5,16 +5,11 @@ namespace LifeX.Client.Interfaces
 {
     public interface ISimulation
     {
-        /// <summary>
-        /// Adds an agent to the simulation and engine.
-        /// </summary>
-        /// <param name="agent">A reference to the agent to add</param>
-        void AddAgent(IAgent agent);
 
         /// <summary>
         /// Initializes the simulation without starting it yet
         /// </summary>
-        void Initialize();
+        void Initialize(/*Todo Add SimulationConfig object!*/);
         
         /// <summary>
         /// Initializes and Starts the simulation

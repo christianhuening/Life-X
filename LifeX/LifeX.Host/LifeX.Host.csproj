@@ -23,4 +23,7 @@
       <Name>WolfSheep.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="SiloHost-mbpch.local-2018-01-26-12.46.30.919Z.log" />
+  </ItemGroup>
 </Project>

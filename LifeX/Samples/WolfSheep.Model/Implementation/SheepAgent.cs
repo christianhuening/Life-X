@@ -1,12 +1,10 @@
-﻿using System.Threading.Tasks;
-using LifeX.API.Agent;
+﻿using System;
+using System.Threading.Tasks;
 using LifeX.Components.Agents;
 using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Model
 {
-
-    
     public class SheepState : AgentState
     {
         public IGrass Grass;
@@ -22,6 +20,7 @@ namespace WolfSheep.Model
 
         public Task Tick()
         {
+            Console.WriteLine("Hello From sheep");
             State.Grass.EatBiomass(0.123);
             return Task.CompletedTask;
         }

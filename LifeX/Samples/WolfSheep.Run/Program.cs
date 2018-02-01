@@ -2,6 +2,7 @@
 using LifeX.Client;
 using LifeX.Config;
 using LifeX.Config.Environment;
+using WolfSheep.Model;
 using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Run
@@ -16,7 +17,7 @@ namespace WolfSheep.Run
             try
             {
                 // This needs to be automated, i.e. have a LayerLoader equivalent
-                var client = DefaultClient.Initialize(config, new[]{typeof(IGrass),typeof(ISheep), typeof(IWolf)});
+                var client = DefaultClient.Initialize(config);
                 /*
                 // get simulation configuration parameters
                 var heightMapFilename = Parameter.Required<string>("HEIGHT_MAP_FILE");
@@ -45,11 +46,8 @@ namespace WolfSheep.Run
                 //var wolfPositions = Distribution.RandomPositions2D(wolfCount);
                 //var sheepPositions = Distribution.RandomPositions2D(sheepCount);
 
-                // create Agents automatically, or manually or however you like...
 
-                // setup global rules and effects
-                // simulation.AddRule(/* ... */)
-            
+                
                 simulation.Start();
             }
             catch (Exception ex)

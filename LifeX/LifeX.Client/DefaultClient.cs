@@ -20,7 +20,7 @@ namespace LifeX.Client
             return ClientConfiguration.LocalhostSilo();
         }
         
-        public static IClusterClient Initialize(ClientConfiguration config, Type[] agents, int initializeAttemptsBeforeFailing=5)
+        public static IClusterClient Initialize(ClientConfiguration config, int initializeAttemptsBeforeFailing=5)
         {
             var attempt = 0;
             IClusterClient client = null;
@@ -30,20 +30,9 @@ namespace LifeX.Client
                 {
                     
 
-                    var builder = new ClientBuilder()
-                        .UseConfiguration(config);
-                    
-                    foreach (var agentType in agents)
-                    {
-                        builder.ConfigureApplicationParts(parts => parts.AddApplicationPart(agentType.Assembly));
-                    }
+                    var builder = new ClientBuilder().UseConfiguration(config);
 
-                    builder.ConfigureApplicationParts(parts =>
-                        {
-                            parts.AddApplicationPart(typeof(IConservativeEngine).Assembly).WithReferences();
-                            parts.AddApplicationPart(typeof(IElasticEngine).Assembly).WithReferences();
-                        }
-                    );
+                    builder.ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory());
                     
                     
                     client = builder.Build();
