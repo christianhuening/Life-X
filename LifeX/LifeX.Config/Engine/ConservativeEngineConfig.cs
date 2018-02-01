@@ -1,10 +1,10 @@
 ﻿namespace LifeX.Config.Engine
 {
-    public class ExactEngineConfig : EngineConfig
+    public class ConservativeEngineConfig : EngineConfig
     {
-        public static ExactEngineConfig FromDefault()
+        public static ConservativeEngineConfig FromDefault()
         {
-            var config = new ExactEngineConfig();
+            var config = new ConservativeEngineConfig();
             return config;
         }
     }

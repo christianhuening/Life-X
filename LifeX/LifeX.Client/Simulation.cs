@@ -1,28 +1,32 @@
 ﻿using System;
-using LifeX.API.Action;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using LifeX.API.Agent;
 using LifeX.API.Engine;
 using LifeX.Client.Interfaces;
 using LifeX.Config;
 using LifeX.Config.Engine;
-using LifeX.Config.Environment;
-using LifeX.Core.Engine;
-using LifeX.Core.Engine.Implementation;
-using LifeX.Core.PubSub;
+using LifeX.Core.Engine.Implementation.Conservative;
+using LifeX.Core.Engine.Implementation.Elastic;
+using LifeX.Core.Engine.Interfaces;
+using Orleans;
 
 namespace LifeX.Client
 {    
     public class Simulation : ISimulation
     {
         private readonly IEngine _engine;
+
+        private readonly List<Task> _registerTasks;
         
-        public Simulation(SimulationConfig config)
+        public Simulation(IClusterClient client, SimulationConfig config)
         {
+            _registerTasks = new List<Task>();
             switch (config.EngineConfig)
             {
-                case ExactEngineConfig engineConfig:
+                case ConservativeEngineConfig engineConfig:
                 {
-                    _engine = new ConservativeEngine(/* engineConfig */);
+                    _engine = client.GetGrain<IConservativeEngine>(Guid.NewGuid());
                     break;
                 }
                 case ElasticEngineConfig engineConfig:
@@ -35,7 +39,7 @@ namespace LifeX.Client
 
         public void AddAgent(IAgent agent)
         {
-            throw new NotImplementedException();
+            _registerTasks.Add(_engine.Register(agent));
         }
 
         public void Initialize()
@@ -45,6 +49,7 @@ namespace LifeX.Client
 
         public void Start()
         {
+            Task.WaitAll(_registerTasks.ToArray());
             _engine.Start();
         }
 

@@ -6,7 +6,7 @@ namespace LifeX.API.Engine
 {
     public interface IEngine : IGrainWithGuidKey
     {
-        Task Register(IAgent agent);
+        Task<bool> Register(IAgent agent);
         Task Start();
     }
 }

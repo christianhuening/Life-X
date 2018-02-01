@@ -10,16 +10,19 @@ namespace LifeX.Config
         public PubSubConfig PubSubConfig;
         public EngineConfig EngineConfig;
 
-        public SimulationConfig(EnvironmentConfig environmentConfig, PubSubConfig pubSubConfig, EngineConfig engineConfig)
+        public int TicksToSimulate;
+
+        public SimulationConfig(EnvironmentConfig environmentConfig, PubSubConfig pubSubConfig, EngineConfig engineConfig, int ticksToSimulate)
         {
             EnvironmentConfig = environmentConfig;
             PubSubConfig = pubSubConfig;
             EngineConfig = engineConfig;
+            TicksToSimulate = ticksToSimulate;
         }
         
         public static SimulationConfig FromDefault()
         {
-            return new SimulationConfig(EnvironmentConfig.FromDefault(), GridPubSubConfig.FromDefault(), ElasticEngineConfig.FromDefault());
+            return new SimulationConfig(EnvironmentConfig.FromDefault(), GridPubSubConfig.FromDefault(), ElasticEngineConfig.FromDefault(), 1);
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿﻿using System;
 using System.Reflection;
 using System.Threading;
-using Microsoft.CodeAnalysis;
+ using LifeX.Core.Engine.Implementation.Conservative;
+ using LifeX.Core.Engine.Implementation.Elastic;
+ using LifeX.Core.Engine.Interfaces;
+ using Microsoft.CodeAnalysis;
 using Orleans;
 using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
@@ -10,14 +13,17 @@ namespace LifeX.Client
 {
     public class DefaultClient
     {
+        
+        
         public static ClientConfiguration DefaultConfiguration()
         {
             return ClientConfiguration.LocalhostSilo();
         }
         
-        public static void Initialize(ClientConfiguration config, Type[] agents, int initializeAttemptsBeforeFailing=5)
+        public static IClusterClient Initialize(ClientConfiguration config, Type[] agents, int initializeAttemptsBeforeFailing=5)
         {
             var attempt = 0;
+            IClusterClient client = null;
             while (attempt < initializeAttemptsBeforeFailing)
             {
                 try
@@ -31,8 +37,16 @@ namespace LifeX.Client
                     {
                         builder.ConfigureApplicationParts(parts => parts.AddApplicationPart(agentType.Assembly));
                     }
+
+                    builder.ConfigureApplicationParts(parts =>
+                        {
+                            parts.AddApplicationPart(typeof(IConservativeEngine).Assembly).WithReferences();
+                            parts.AddApplicationPart(typeof(IElasticEngine).Assembly).WithReferences();
+                        }
+                    );
                     
-                    var client = builder.Build();
+                    
+                    client = builder.Build();
                     client.Connect().Wait();
                     Console.WriteLine("Client successfully connect to silo host");
                     break;
@@ -51,6 +65,7 @@ namespace LifeX.Client
 
                 attempt++;
             }
+            return client;
         }
     }
 }

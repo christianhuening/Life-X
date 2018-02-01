@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
-using LifeX.API.Engine;
 using LifeX.Config.Engine;
+using LifeX.Core.Engine.Interfaces;
 
-namespace LifeX.Core.Engine.Implementation
+namespace LifeX.Core.Engine.Implementation.Elastic
 {
-    public class ElasticEngine : IEngine
+    public class ElasticEngine : IElasticEngine
     {
         private ElasticEngineConfig _elasticEngineConfi;
 
@@ -14,7 +14,7 @@ namespace LifeX.Core.Engine.Implementation
             _elasticEngineConfi = elasticEngineConfi;
         }
 
-        public Task Register(IAgent agent)
+        public Task<bool> Register(IAgent agent)
         {
             throw new System.NotImplementedException();
         }
