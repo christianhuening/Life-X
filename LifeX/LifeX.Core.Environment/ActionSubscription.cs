@@ -18,7 +18,7 @@ using LifeX.API.Agent;
 //  GUID is stable across compilations and runs.
 //  (This is true for the SSCLI implementation and not guaranteed to be true for the actual CLR, past, present or future.)
 
-namespace LifeX.Core.PubSub
+namespace LifeX.Core.Environment
 {
     public class ActionSubscription<TAction> where TAction : IAction
     {

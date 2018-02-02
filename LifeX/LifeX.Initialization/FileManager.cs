@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace LifeX.Runtime
+namespace LifeX.Initialization
 {
     public class FileManager
     {

@@ -1,11 +1,10 @@
 ﻿using System.Threading.Tasks;
-using LifeX.API.Agent;
 using LifeX.Components.Actions;
 using LifeX.Components.Agents;
 using LifeX.Components.Memory;
 using WolfSheep.Model.Interfaces;
 
-namespace WolfSheep.Model
+namespace WolfSheep.Model.Implementation
 {
 
     
@@ -36,7 +35,7 @@ namespace WolfSheep.Model
             
             SubscribeAction<MoveAction>()
                 .From<ISheep>()
-                .Near(Parameter.Optional<double>("WOLF_VIEW_RADIUS", 5.0d))
+                .Near(Parameter.Optional("WOLF_VIEW_RADIUS", 5.0d))
                 .Memory(State.Sheeps, (old, recent) => State.Position.DistanceTo(old.Position) > State.Position.DistanceTo(recent.Position))
                 //.ForgetIf<OutOfSightAction>() // both action types need to implement IForgettable action
                 .ForEach((action) => { // instead of lambda member function is also possible

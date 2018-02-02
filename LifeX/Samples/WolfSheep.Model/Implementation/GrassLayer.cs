@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
-using LifeX.API.Layer;
 using LifeX.Components.Layers;
 using WolfSheep.Model.Interfaces;
 
-namespace WolfSheep.Model
+namespace WolfSheep.Model.Implementation
 {
 
     public class GrassState : LayerState

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using LifeX.Components.Agents;
 using WolfSheep.Model.Interfaces;
 
-namespace WolfSheep.Model
+namespace WolfSheep.Model.Implementation
 {
     public class SheepState : AgentState
     {
