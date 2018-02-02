@@ -8,10 +8,11 @@ using System.Threading;
 using Orleans;
 using Orleans.Runtime;
 using Orleans.Runtime.Configuration;
+ using Serilog;
 
 namespace LifeX.Client
 {
-    public class DefaultClient
+    public static class DefaultClient
     {
         
         
@@ -28,20 +29,17 @@ namespace LifeX.Client
             {
                 try
                 {
-                    
-
                     var builder = new ClientBuilder().UseConfiguration(config);
 
                     builder.ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory());
-                    
-                    
+                            
                     client = builder.Build();
                     client.Connect().Wait();
-                    Console.WriteLine("Client successfully connect to silo host");
+                    
                     break;
 
                 }
-                catch (SiloUnavailableException)
+                catch (Exception ex) when (ex is AggregateException || ex is SiloUnavailableException)
                 {
                     attempt++;
                     Console.WriteLine($"Attempt {attempt} of {initializeAttemptsBeforeFailing} failed to initialize the Orleans client.");

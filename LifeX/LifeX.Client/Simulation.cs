@@ -18,6 +18,11 @@ namespace LifeX.Client
         private readonly IEngine _engine;
 
         private readonly List<Task> _registerTasks;
+
+        public Simulation()
+        {
+            
+        }
         
         public Simulation(IClusterClient client, SimulationConfig config)
         {
@@ -31,7 +36,7 @@ namespace LifeX.Client
                 }
                 case ElasticEngineConfig engineConfig:
                 {
-                    _engine = new ElasticEngine(engineConfig);
+                    _engine = client.GetGrain<IElasticEngine>(Guid.NewGuid());
                     break;
                 }
             }

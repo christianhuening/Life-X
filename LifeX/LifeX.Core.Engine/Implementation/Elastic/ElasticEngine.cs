@@ -1,17 +1,26 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Agent;
+using LifeX.Config;
 using LifeX.Config.Engine;
 using LifeX.Core.Engine.Interfaces;
+using Microsoft.Extensions.Logging;
+using Orleans;
 
 namespace LifeX.Core.Engine.Implementation.Elastic
 {
-    public class ElasticEngine : IElasticEngine
+    public class ElasticEngine : Grain<ElasticEngineState>, IElasticEngine
     {
-        private ElasticEngineConfig _elasticEngineConfi;
+        private readonly ILogger<ElasticEngine> _logger;
 
-        public ElasticEngine(ElasticEngineConfig elasticEngineConfi)
+
+        public ElasticEngine(ILogger<ElasticEngine> logger)
         {
-            _elasticEngineConfi = elasticEngineConfi;
+            _logger = logger;
+        }
+
+        public Task Initialize(SimulationConfig config)
+        {
+            throw new System.NotImplementedException();
         }
 
         public Task<bool> Register(IAgent agent)

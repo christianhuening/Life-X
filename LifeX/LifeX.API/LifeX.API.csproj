@@ -5,4 +5,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Orleans.Core" Version="2.0.0-beta3" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LifeX.Config\LifeX.Config.csproj">
+      <Project>{1486E908-763D-407F-8C47-CFB17687664C}</Project>
+      <Name>LifeX.Config</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

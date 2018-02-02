@@ -16,7 +16,6 @@ namespace WolfSheep.Run
             var config = DefaultClient.DefaultConfiguration();
             try
             {
-                // This needs to be automated, i.e. have a LayerLoader equivalent
                 var client = DefaultClient.Initialize(config);
 
                 var simulationConfig = SimulationConfig.FromDefault();

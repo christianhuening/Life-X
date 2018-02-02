@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using LifeX.API.Agent;
+﻿using LifeX.Core.Engine.Implementation.Common;
 
 namespace LifeX.Core.Engine.Implementation.Conservative
 {
-    public class ConservativeEngineState
+    public class ConservativeEngineState : EngineState
     {
-        public HashSet<IAgent> Agents { get; set; }
-        public int TicksToSimulate { get; set; }
+
     }
 }
