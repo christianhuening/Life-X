@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Serilog;
+using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Hosting;
 using Orleans.Runtime.Configuration;
@@ -38,16 +38,18 @@ namespace LifeX.Host
             // define the cluster configuration
             var config = ClusterConfiguration.LocalhostPrimarySilo();
             config.AddMemoryStorageProvider();
-            
-            Log.Logger = new LoggerConfiguration()
+            // use this for Serilog
+           /* Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
+            */
             
             var builder = new SiloHostBuilder()
                 .UseConfiguration(config)
-                .ConfigureApplicationParts(parts =>parts.AddFromApplicationBaseDirectory())
-                .ConfigureLogging(logging => logging.AddSerilog(dispose: true));
+                .ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory())
+                .ConfigureLogging(logging => logging.AddConsole());
+                    //.AddSerilog(Log.Logger, dispose: true));
 
             var host = builder.Build();
             await host.StartAsync();

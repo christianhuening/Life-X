@@ -15,6 +15,7 @@ namespace LifeX.Client
 {    
     public class Simulation : ISimulation
     {
+        private readonly SimulationConfig _config;
         private readonly IEngine _engine;
 
         private readonly List<Task> _registerTasks;
@@ -26,6 +27,7 @@ namespace LifeX.Client
         
         public Simulation(IClusterClient client, SimulationConfig config)
         {
+            _config = config;
             _registerTasks = new List<Task>();
             switch (config.EngineConfig)
             {
@@ -47,15 +49,15 @@ namespace LifeX.Client
             _registerTasks.Add(_engine.Register(agent));
         }
 
-        public void Initialize()
+        public Task Initialize()
         {
-            throw new NotImplementedException();
+            return _engine.Initialize(_config);
         }
 
-        public void Start()
+        public Task Start()
         {
             Task.WaitAll(_registerTasks.ToArray());
-            _engine.Start();
+            return _engine.Start();
         }
 
         public void Stop()

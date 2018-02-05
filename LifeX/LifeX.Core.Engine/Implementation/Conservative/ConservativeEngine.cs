@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using LifeX.API.Agent;
 using LifeX.Config;
@@ -24,8 +25,9 @@ namespace LifeX.Core.Engine.Implementation.Conservative
         public Task Initialize(SimulationConfig config)
         {
             State.TicksToSimulate = config.TicksToSimulate;
+            State.Agents = new HashSet<IAgent>();
             _logger.Info("Initialized Conservative Engine succesfully!");
-            return Task.CompletedTask;
+            return WriteStateAsync();
         }
         
         public Task<bool> Register(IAgent agent)

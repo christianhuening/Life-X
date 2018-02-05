@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Threading.Tasks;
 using LifeX.API.Agent;
 
 namespace LifeX.Client.Interfaces
@@ -9,12 +10,12 @@ namespace LifeX.Client.Interfaces
         /// <summary>
         /// Initializes the simulation without starting it yet
         /// </summary>
-        void Initialize(/*Todo Add SimulationConfig object!*/);
+        Task Initialize();
         
         /// <summary>
         /// Initializes and Starts the simulation
         /// </summary>
-        void Start();
+        Task Start();
     
         /// <summary>
         /// Stops the simulatio gracefully. This means

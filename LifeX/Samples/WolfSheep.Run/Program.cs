@@ -22,7 +22,15 @@ namespace WolfSheep.Run
 
                 var simulation = new Simulation(client, simulationConfig);
                 
-                simulation.Start();
+                simulation.Initialize().Wait();
+                
+                var simFinished = simulation.Start();
+                
+                Console.WriteLine("Simulation started...");
+                
+                simFinished.Wait();
+                
+                Console.WriteLine("Simulation finished!");
             }
             catch (Exception ex)
             {
