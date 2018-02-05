@@ -36,7 +36,7 @@ namespace LifeX.Test
             await WriteStateAsync();
         }
 
-        public Task Initialize(AgentConfig config)
+        public Task Initialize(AgentConfig<IAgent> config)
         {
             throw new System.NotImplementedException();
         }

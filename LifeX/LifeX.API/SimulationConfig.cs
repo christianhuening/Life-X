@@ -13,7 +13,7 @@ namespace LifeX.API
         public PubSubConfig PubSubConfig;
         public EngineConfig EngineConfig;
         public int TicksToSimulate;
-        private readonly Dictionary<Type, IAgentConfig<IAgent>> _agentConfigs;
+        private readonly Dictionary<Type, AgentConfig<IAgent>> _agentConfigs;
 
         public SimulationConfig(EnvironmentConfig environmentConfig, PubSubConfig pubSubConfig, EngineConfig engineConfig,
             int ticksToSimulate)
@@ -22,7 +22,7 @@ namespace LifeX.API
             PubSubConfig = pubSubConfig;
             EngineConfig = engineConfig;
             TicksToSimulate = ticksToSimulate;
-            _agentConfigs = new Dictionary<Type, IAgentConfig<IAgent>>();
+            _agentConfigs = new Dictionary<Type, AgentConfig<IAgent>>();
             
         }
         
@@ -34,14 +34,10 @@ namespace LifeX.API
         public AgentConfig<TAgent> ConfigureAgentType<TAgent>() where TAgent : IAgent
         {
             var type = typeof(TAgent);
-            IAgentConfig<TAgent> ac = new AgentConfig<TAgent>();
-            _agentConfigs.Add(type, ac);
+            var ac = new AgentConfig<TAgent>();
+            _agentConfigs.Add(type, ac as AgentConfig<IAgent>);
             return ac;
         }
 
-        public AgentConfig<TResult> GetAgentConfig<out TResult>()
-        {
-            
-        }
     }
 }

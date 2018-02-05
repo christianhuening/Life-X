@@ -29,7 +29,7 @@ namespace WolfSheep.Model.Implementation
 
     public class WolfAgent : AgentBase<WolfState>, IWolf {
         
-        public async Task Initialize(AgentConfig config)
+        public async Task Initialize(AgentConfig<IWolf> config)
         {
             State.Plan = WolfPlan.WalkAround;
             State.Sheeps = new Memory<MoveAction>(3, MemoryStrategy.FORGET_OUT_OF_DISTANCE);

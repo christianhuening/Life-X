@@ -39,6 +39,7 @@ namespace LifeX.Host
             var config = ClusterConfiguration.LocalhostPrimarySilo();
             config.AddMemoryStorageProvider();
             // use this for Serilog
+            
            /* Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()

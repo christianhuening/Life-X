@@ -12,10 +12,10 @@ namespace WolfSheep.Model.Implementation
     }
 
     public class SheepAgent : AgentBase<SheepState>, ISheep {
-        public async Task Initialize(AgentConfig config)
+        public async Task Initialize(AgentConfig<IAgent> config)
         {
             SubscribeLayer<IGrass>().Memory(State.Grass);
-
+            
             await WriteStateAsync();
         }
 

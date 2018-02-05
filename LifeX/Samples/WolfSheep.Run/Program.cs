@@ -6,6 +6,7 @@ using LifeX.Config;
 using LifeX.Config.Environment;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using WolfSheep.Model;
+using WolfSheep.Model.Implementation;
 using WolfSheep.Model.Interfaces;
 
 namespace WolfSheep.Run
@@ -27,7 +28,16 @@ namespace WolfSheep.Run
             simulationConfig
                 .ConfigureAgentType<IWolf>()
                 .Count(100)
-                .Init(() => new List<IWolf>());
+                .Init(agentCount =>
+                {
+                    var wolves = new List<IWolf>();
+                    for (var i = 0; i < agentCount; i++)
+                    {
+                        wolves.Add(new WolfAgent());
+                    }
+
+                    return wolves;
+                });
                     
             simulationConfig
                 .ConfigureAgentType<ISheep>()
