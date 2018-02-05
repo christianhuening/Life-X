@@ -1,4 +1,4 @@
-﻿namespace LifeX.Config.Engine
+﻿namespace LifeX.API.Engine
 {
     public abstract class EngineConfig
     {

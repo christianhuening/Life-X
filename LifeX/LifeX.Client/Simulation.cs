@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LifeX.API;
 using LifeX.API.Agent;
 using LifeX.API.Engine;
 using LifeX.Client.Interfaces;
 using LifeX.Config;
-using LifeX.Config.Engine;
 using LifeX.Core.Engine.Implementation.Conservative;
 using LifeX.Core.Engine.Implementation.Elastic;
 using LifeX.Core.Engine.Interfaces;
@@ -20,11 +20,6 @@ namespace LifeX.Client
 
         private readonly List<Task> _registerTasks;
 
-        public Simulation()
-        {
-            
-        }
-        
         public Simulation(IClusterClient client, SimulationConfig config)
         {
             _config = config;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using LifeX.API;
 using LifeX.API.Agent;
 using LifeX.Config;
 using LifeX.Core.Engine.Interfaces;

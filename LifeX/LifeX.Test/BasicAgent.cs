@@ -36,6 +36,11 @@ namespace LifeX.Test
             await WriteStateAsync();
         }
 
+        public Task Initialize(AgentConfig config)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task Tick()
         {
             // do something...

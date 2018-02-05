@@ -1,7 +1,8 @@
 ﻿using System.Threading.Tasks;
 using LifeX.API.Action;
 using LifeX.API.Agent;
-using LifeX.Core.Environment;
+using LifeX.Components.Actions;
+using LifeX.Components.Layers;
 using LifeX.Core.PubSub;
 using Orleans;
 using Orleans.Concurrency;

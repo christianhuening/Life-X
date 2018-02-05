@@ -4,7 +4,7 @@ namespace LifeX.API.Agent
 {
     public interface IAgent : Orleans.IGrainWithIntegerKey, IAgentBase
     {
-        Task Initialize();
+        Task Initialize(AgentConfig config);
         Task Tick();
     }
 }

@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.API", "LifeX.API\Life
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.PubSub", "LifeX.Core.PubSub\LifeX.Core.PubSub.csproj", "{6F386A40-0F65-4F71-981C-1EE31557DE3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.Environment", "LifeX.Core.Environment\LifeX.Core.Environment.csproj", "{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeX.Core.Engine", "LifeX.Core.Engine\LifeX.Core.Engine.csproj", "{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{18F2159D-9740-4F7A-B0E8-37057E5C79ED}"
@@ -42,10 +40,6 @@ Global
 		{6F386A40-0F65-4F71-981C-1EE31557DE3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F386A40-0F65-4F71-981C-1EE31557DE3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F386A40-0F65-4F71-981C-1EE31557DE3F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ACA2B22-9F3B-46CB-98B5-BA43189B86BD}.Release|Any CPU.ActiveCfg = Release|Any CPU

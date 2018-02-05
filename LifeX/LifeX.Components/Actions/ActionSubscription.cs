@@ -18,10 +18,12 @@ using LifeX.API.Agent;
 //  GUID is stable across compilations and runs.
 //  (This is true for the SSCLI implementation and not guaranteed to be true for the actual CLR, past, present or future.)
 
-namespace LifeX.Core.Environment
+namespace LifeX.Components.Actions
 {
     public class ActionSubscription<TAction> where TAction : IAction
     {
+        public IAgent FromProp { get; private set; }
+        
         // Can subscribe to specific type of agent
         public ActionSubscription<TAction> From<TAgent>() where TAgent : IAgent
         {
@@ -34,6 +36,7 @@ namespace LifeX.Core.Environment
         //    .ForEach((action) => { /* do something */ });
         public ActionSubscription<TAction> From<TAgent>(TAgent instance) where TAgent : IAgent
         {
+            FromProp = instance;
             return this;
         }
         

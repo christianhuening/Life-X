@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using LifeX.API.Agent;
 using LifeX.Components.Actions;
 using LifeX.Components.Agents;
 using LifeX.Components.Memory;
@@ -28,7 +29,7 @@ namespace WolfSheep.Model.Implementation
 
     public class WolfAgent : AgentBase<WolfState>, IWolf {
         
-        public async Task Initialize()
+        public async Task Initialize(AgentConfig config)
         {
             State.Plan = WolfPlan.WalkAround;
             State.Sheeps = new Memory<MoveAction>(3, MemoryStrategy.FORGET_OUT_OF_DISTANCE);

@@ -1,6 +1,6 @@
-﻿namespace LifeX.Config.Engine
+﻿namespace LifeX.API.Engine
 {
-    public class ElasticEngineConfig : EngineConfig
+    public class ConservativeEngineConfig : EngineConfig
     {
         public static ConservativeEngineConfig FromDefault()
         {
