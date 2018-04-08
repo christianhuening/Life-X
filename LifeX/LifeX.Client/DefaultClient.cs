@@ -2,7 +2,6 @@
  using System.Threading;
  using Orleans;
 using Orleans.Runtime;
-using Orleans.Runtime.Configuration;
 
 namespace LifeX.Client
 {
@@ -23,7 +22,7 @@ namespace LifeX.Client
             {
                 try
                 {
-                    var builder = new ClientBuilder().UseConfiguration(config);
+                    var builder = new ClientBuilder().ConfigureAppConfiguration();
 
                     builder.ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory());
                             

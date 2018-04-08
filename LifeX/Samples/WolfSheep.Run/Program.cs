@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using LifeX.API;
 using LifeX.Client;
-using LifeX.Config;
-using LifeX.Config.Environment;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using WolfSheep.Model;
 using WolfSheep.Model.Implementation;
 using WolfSheep.Model.Interfaces;
 

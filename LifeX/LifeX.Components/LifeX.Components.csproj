@@ -7,10 +7,6 @@
       <Project>{581D4153-79B9-4441-A559-CF086395399E}</Project>
       <Name>LifeX.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LifeX.Core.Environment\LifeX.Core.Environment.csproj">
-      <Project>{A240DF01-8F41-4BF4-A5CE-A007D32D0DDE}</Project>
-      <Name>LifeX.Core.Environment</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LifeX.Core.PubSub\LifeX.Core.PubSub.csproj">
       <Project>{6F386A40-0F65-4F71-981C-1EE31557DE3F}</Project>
       <Name>LifeX.Core.PubSub</Name>
